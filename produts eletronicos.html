@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>produtos eletronicos</title>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toast">✓ Adicionado ao carrinho!</div>
+
+  <!-- ─── CART DRAWER ─── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 Carrinho</h3>
+      <button class="close-cart" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">O seu carrinho está vazio.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">0 Kz</span>
+      </div>
+      <a id="checkoutBtn" href="https://wa.me/+244932381213" target="_blank" class="checkout-btn">
+        Finalizar via WhatsApp 💬
+      </a>
+    </div>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <div class="header-inner">
+      <span class="logo">Only Shyne</span>
+
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">PÁGINA INICIAL</a></li>
+          <li><a href="roupas.html">ROUPAS & MODA</a></li>
+          <li><a href="privacidade.html">PRIVACIDADE</a></li>
+          <li><a href="termos.html">TERMOS</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="cart-btn" onclick="openCart()">
+          🛒 Carrinho <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html" onclick="closeMenu()">Página inicial</a></li>
+        <li><a href="sobre.html" onclick="closeMenu()">Sobre</a></li>
+        <li><a href="privacidade.html" onclick="closeMenu()">Política de Privacidade</a></li>
+        <li><a href="termos.html" onclick="closeMenu()">Termos de Uso</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <h1>Only Shyne </h1>
+    <p>Faça a sua compra a partir de casa — fácil, rápido e seguro</p>
+  </div>
+
+  <!-- ─── VIDEO DE PUBLICIDADE ─── -->
+  <section class="video-section">
+    <h2> A Nossa Coleção</h2>
+    <div class="video-wrapper">
+      <!--
+        COMO ADICIONAR O SEU VÍDEO:
+        1. Coloca o teu ficheiro de vídeo na mesma pasta (ex: promo.mp4)
+        2. Substitui src="promo.mp4" pelo nome do teu ficheiro
+        OU usa um link do YouTube/outro serviço com <iframe>
+      -->
+      <video id="promoVideo" preload="metadata" playsinline>
+        <source src="publicidade.mp4" type="video/mp4">
+        <!-- Fallback: mostra mensagem se vídeo não carregar -->
+        O teu navegador não suporta vídeo. <a href="https://wa.me/+244932381213" style="color:var(--gold)">Fala connosco no WhatsApp</a>.
+      </video>
+      <div class="video-overlay" id="videoOverlay" onclick="playVideo()">
+        <div class="play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#000">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MINI BANNERS ─── -->
+  <div class="banners-destaque">
+    <div class="banner-box">
+      <div class="texto-banner">
+        <h3> Shyne 4ever</h3>
+        <p>Apresentar-se bem alimenta o seu interior, eleva o seu ego e melhora a sua autoestima. Vista a melhor versão de si.</p>
+      </div>
+    </div>
+    <div class="banner-box">
+      <div class="texto-banner">
+        <h3> Always Clean</h3>
+        <p>O segredo da roupa é o cuidado. Se a roupa brilhar, tu também brilhas automaticamente. Qualidade que se vê.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── AD SENSE ─── -->
+  <div style="max-width:1100px; margin:0 auto 20px; padding:0 20px;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ─── T-SHIRTS ─── -->
+  <div class="section-title">
+    <h2>Coleção De Telefones</h2>
+    <p>Escolhe o telefone da sua preferencia, com uma qualidade de imagem inpecavel, bateria 100% saudável.</p>
+    <div class="divider"></div>
+  </div>
+
+  <section class="produtos">
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="Iphone 16.jpg" alt="T-Shirt Reebok" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">Original stock (2)</span>
+      </div>
+      <div class="card-body">
+        <h3>IPHONE 11 NORMAL</h3>
+        <p>Iphone 11 normal 1080p full HD, 128 GB, bateria com duração de 72 horas pronto a usar. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('T-Shirt Reebok', 3500)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Reebok" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="telefone.jpg" alt="T-Shirt Lacoste" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">135.000 kz Stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>ULTRA-VIVO</h3>
+        <p>Ultra vivo é o smartphone que entrega uma qualidade pronta 1080p full HD, 128 GB, bateria com duração de 72 horas pronto a usar. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('ULTRA-VIVO', 135000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Lacoste" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="smart watch.jpg" alt="T-Shirt Adidas" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">50.000 kz Stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>SMART-WATCH</h3>
+        <p>Ultra vivo é o smartphone que entrega uma qualidade pronta 1080p full HD, 128 GB, bateria com duração de 72 horas pronto a usar. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('SMART-WATCH', 3800)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Adidas" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+ <div class="card">
+      <div class="card-img-wrap">
+        <img src="phones.jpg" alt="T-Shirt Reebok" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">135.000 kz Stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>ULTRA-VIVO</h3>
+        <p>Ultra vivo é o smartphone que entrega uma qualidade pronta 1080p full HD, 128 GB, bateria com duração de 72 horas pronto a usar. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('T-Shirt Reebok', 3500)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Reebok" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="telefone.jpg" alt="T-Shirt Lacoste" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">135.000 Stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>ULTRA-VIVO</h3>
+        <p>Ultra vivo é o smartphone que entrega uma qualidade pronta 1080p full HD, 128 GB, bateria com duração de 72 horas pronto a usar. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('ULTRA-VIVO', 135000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Lacoste" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="smart watch.jpg" alt="T-Shirt Adidas" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">50.000 kz Stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>SMART-WATCH</h3>
+        <p>Relógios inteligente capaz de enviar sms, fazer chamadas, acesso a internet, possivel conectar com o seu smartphone. Entrega em qualquer parte de Luanda</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('SMART-WATCH', 50.000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20comprar%20a%20T-Shirt%20Adidas" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <!-- ─── CONTROLE DA XBOX ─── -->
+  <div class="section-title" style="margin-top: 56px;">
+    <h2>CONTROLE DA XBOX</h2>
+    <p>Qualidade boa com todos os efeitos sonoros, bluetooth 10 m de distancia, bateria 100% saudável. Entrega ao domicílio em qualquer parte de Luanda.</p>
+    <div class="divider"></div>
+  </div>
+
+  <section class="produtos">
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="comando.PNG" alt="Ténis Adidas" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">40.000 kz (cada) Stock (2)</span>
+      </div>
+      <div class="card-body">
+        <h3>XBOX SÉRIE X</h3>
+        <p>Qualidade boa com todos os efeitos sonoros, bluetooth 10 m de distancia, bateria 100% saudável. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('XBOX SÉRIE X', 4000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Tenho%20interesse%20nos%20Ténis%20Adidas%20Nº43" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="comando.PNG" alt="Acessórios" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">40.000 kz (cada) Stock (2)</span>
+      </div>
+      <div class="card-body">
+        <h3>XBOX SÉRIE X</h3>
+        <p>Qualidade boa com todos os efeitos sonoros, bluetooth 10 m de distancia, bateria 100% saudável. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('XBOX SÉRIE', 4000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20fazer%20troca%20de%20acessórios" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="comando.PNG" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">40.000 kz (cada) Stock (2)</span>
+      </div>
+      <div class="card-body">
+        <h3>XBOX SÉRIE X</h3>
+        <p>Qualidade boa com todos os efeitos sonoros, bluetooth 10 m de distancia, bateria 100% saudável. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('Acessórios Informáticos', 5000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ─── COMPUTADORES ─── -->
+  <div class="section-title" style="margin-top: 56px;">
+    <h2>COLEÇÃO DE COMPUTADORES</h2>
+    <p>Qualidade no produto, computadores de alto desempenho. Entrega disponível em Luanda.</p>
+    <div class="divider"></div>
+  </div>
+
+  <section class="produtos">
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="PC.PNG" alt="PC" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">950.000 kz Stock (3)</span>
+      </div>
+      <div class="card-body">
+       
+       <h3> PC Gamer </h3>
+        <p>Computador Gamer da gigabyte processador intel core i512400, 1 SSD de 1 terabyte de armazenamento, 16 GB de RAM, wi-fi, bluetooth, placa gráfica de 8 GB da MSI, fonte alimentada de 80plus.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('pc gamer', 950000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Tenho%20interesse%20nos%20Ténis%20Adidas%20Nº43" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="PC.PNG" alt="Acessórios" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">950.000 kz stock (3)</span>
+      </div>
+      <div class="card-body">
+        <h3> PC Gamer </h3>
+        <p>Computador Gamer da gigabyte processador intel core i512400, 1 SSD de 1 terabyte de armazenamento, 16 GB de RAM, wi-fi, bluetooth, placa gráfica de 8 GB da MSI, fonte alimentada de 80plus.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('pc gamer', 950000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20fazer%20troca%20de%20acessórios" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="PC.PNG" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">950.000 kz stock (3)</span>
+      </div>
+      <div class="card-body">
+       <h3> PC Gamer </h3>
+        <p>Computador Gamer da gigabyte processador intel core i512400, 1 SSD de 1 terabyte de armazenamento, 16 GB de RAM, wi-fi, bluetooth, placa gráfica de 8 GB da MSI, fonte alimentada de 80plus.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('pc gamer', 950000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+     <div class="card">
+      <div class="card-img-wrap">
+        <img src="portatil.PNG" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">320.000 kz stock (2)</span>
+      </div>
+      <div class="card-body">
+       <h3>Computador ACCER</h3>
+        <p>500 SSD, RAM 8 GB, Wi-fi 3.0, Bluetooth, Bateria duravel, windows 11. Entrega ao domicílio em qualquer parte de Luanda..</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('computador accer', 320000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+     <div class="card">
+      <div class="card-img-wrap">
+        <img src="portatil.PNG" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">320.000 kz stock (2)</span>
+      </div>
+      <div class="card-body">
+       <h3>Computador ACCER</h3>
+        <p>500 SSD, RAM 8 GB, Wi-fi 3.0, Bluetooth, Bateria duravel, windows 11. Entrega ao domicílio em qualquer parte de Luanda..</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('computador accer', 320000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+     <div class="card">
+      <div class="card-img-wrap">
+        <img src="portatil.PNG" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">320.000 kz stock (2)</span>
+      </div>
+      <div class="card-body">
+        <h3>Computador ACCER</h3>
+        <p>500 SSD, RAM 8 GB, Wi-fi 3.0, Bluetooth, Bateria duravel, windows 11. Entrega ao domicílio em qualquer parte de Luanda..</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('computador accer', 320000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+
+   <!-- ─── JOGOS ─── -->
+  <div class="section-title" style="margin-top: 56px;">
+    <h2>Coleção de Jogos</h2>
+    <p>Qualidade nas vendas dos jogos do console PS5, qualidade no produto. Entrega disponível em Luanda.</p>
+    <div class="divider"></div>
+  </div>
+
+  <section class="produtos">
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="fc.png" alt="Ténis Adidas" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">90.000 kz stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>Discos de Jogos PS5</h3>
+        <p>Qualidade boa, jogas o fc26 da melhor qualidade disco original e resistente. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('FC26 PS5', 9000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Tenho%20interesse%20nos%20Ténis%20Adidas%20Nº43" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="fc.png" alt="Acessórios" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">90.000 kz stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>Discos de Jogos PS5/6</h3>
+        <p>Qualidade boa, jogas o fc26 da melhor qualidade disco original e resistente. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('FC26 PS5', 9000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20fazer%20troca%20de%20acessórios" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="fc.png" alt="Acessórios Informáticos" onerror="this.style.background='#1a1a1a'; this.style.minHeight='220px'">
+        <span class="card-badge">90.000 kz stock (1)</span>
+      </div>
+      <div class="card-body">
+        <h3>Discos de Jogos PS5/6</h3>
+        <p>Qualidade boa, jogas o fc26 da melhor qualidade disco original e resistente. Entrega ao domicílio em qualquer parte de Luanda.</p>
+        <div class="card-actions">
+          <button class="botao-outline" onclick="addToCart('FC26 PS5', 9000)">
+            🛒 Adicionar
+          </button>
+          <a href="https://wa.me/+244932381213?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20Acessórios%20Informáticos" target="_blank" class="botao">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── AD SENSE RODAPÉ ─── -->
+  <div style="max-width:1100px; margin:50px auto 0; padding:0 20px;">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>📩 Email: <a href="mailto:delmirobartolomeu444@gmail.com">delmirobartolomeu444@gmail.com</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/+244932381213">+244 932 38 12 13</a></p>
+    <p>⚡ As melhores vendas e trocas — rápidas e práticas</p>
+    <div class="footer-links">
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <small>© 2025 <strong>Only Shyne</strong> | Desenvolvido por <em>Real_delmiro444</em></small>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
